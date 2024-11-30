@@ -30,8 +30,6 @@
                                 data-model="todo_check_{{item.pk}}" data-on-click="$get('/check_off_todo/{{ item.pk }}')">
                     </div>
                 </li>
-                {% empty %}
-                <li class="list-group-item">No items on your Todo list</li>
                 {% endfor %}
             </ul>
         </div>
