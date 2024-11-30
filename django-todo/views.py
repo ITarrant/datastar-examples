@@ -26,6 +26,8 @@ async def add_todos(request):
     store_in = json.loads(request.GET.get('datastar'))
     if store_in['todoInput']:  # if user entered text, create new to do entry
         new_todo = await Todo.objects.acreate(item=store_in['todoInput'])
+    else:
+        return HttpResponse(status=204)
     async def update_frag(sse):
         target = '#todo-list'
         # render the html fragment to str before sending via sse
