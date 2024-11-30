@@ -15,7 +15,7 @@
         <div class="col-6" id="complete_list" data-store="{{ store }}">
             <div class="mb-2 mt-2">
                 <label for="todo-input">Add a Todo</label>
-                <input class="form-control" type="text" id="todo-input" data-model="todoInput" data-model="todoInput" data-on-keydown.key_enter="$get('/add_todos')">
+                <input class="form-control" type="text" id="todo-input" data-model="todoInput" data-on-keydown.key_enter="$get('/add_todos')">
             </div>
             <div class="d-flex justify-content-between">
                 <button data-on-click="$get('/add_todos')" class="btn btn-primary">Add Todo</button>
