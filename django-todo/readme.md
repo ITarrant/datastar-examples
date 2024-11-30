@@ -1,6 +1,7 @@
 # Django + Datastar Todo app
 
-[Screencast from 2024-11-30 17-58-20.webm](https://github.com/user-attachments/assets/dd072537-1bb2-4cba-8fe0-2b46dbfee3b7)
+[Screencast from 2024-12-01 08-35-25.webm](https://github.com/user-attachments/assets/36151d5a-deb0-4659-84f9-34e5237373e4)
+
 
 
 ## To try it yourself
