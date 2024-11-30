@@ -1,0 +1,40 @@
+{% extends 'datastar/base.html' %}
+
+{% block head %}
+<style>
+    .done {
+        text-decoration: line-through;
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<h3 class="text-center mt-4">Django + Datastar Todo List</h3>
+<main class="container" id="main">
+    <div class="row justify-content-center">
+        <div class="col-6" id="complete_list" data-store="{{ store }}">
+            <div class="mb-2 mt-2">
+                <label for="todo-input">Add a Todo</label>
+                <input class="form-control" type="text" id="todo-input" data-model="todoInput">
+            </div>
+            <div class="d-flex justify-content-between">
+                <button data-on-click="$get('/add_todos')" class="btn btn-primary">Add Todo</button>
+                <button data-on-click="$get('/clear_todos')" class="btn btn-warning">Clear done</button>
+            </div>
+            <ul class="list-group mt-2" id="todo-list">
+                {% for item in todos %}
+                <li class="list-group-item d-flex justify-content-between" id="todo_{{item.pk}}">
+                    <span data-class="{'done':$todo_check_{{item.pk}}}">{{ item.item }}</span>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="todo_check_{{item.pk}}"
+                                data-model="todo_check_{{item.pk}}" data-on-click="$get('/check_off_todo/{{ item.pk }}')">
+                    </div>
+                </li>
+                {% empty %}
+                <li class="list-group-item">No items on your Todo list</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+{% endblock %}
